@@ -3,10 +3,10 @@ const investInput = document.getElementById("invest");
 const maxProfitInput = document.getElementById("maxProfit");
 
 const insuranceOutput = document.getElementById("insurance");
+const insurancePercentOutput = document.getElementById("insurancePercent");
 const breakEvenOutput = document.getElementById("breakEven");
 const finalReturnOutput = document.getElementById("finalReturn");
 const profitPercentOutput = document.getElementById("profitPercent");
-const insurancePercentOutput = document.getElementById("insurancePercent");
 
 function calculate() {
     let total = parseFloat(totalInput.value) || 0;
