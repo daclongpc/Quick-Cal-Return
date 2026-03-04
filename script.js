@@ -17,12 +17,12 @@ function calculate() {
     let insurance = total - invest;
     insuranceOutput.innerText = insurance.toFixed(2);
     // Insurance %
-if (total > 0) {
+    if (total > 0) {
     let insurancePercent = (insurance * 100) / total;
     insurancePercentOutput.innerText = insurancePercent.toFixed(2) + "%";
-} else {
+    } else {
     insurancePercentOutput.innerText = "0%";
-}
+    }
 
     // Profit % trên invest
     if (invest > 0) {
