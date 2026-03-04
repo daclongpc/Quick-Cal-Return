@@ -31,17 +31,19 @@ function calculate() {
     } else {
         breakEvenOutput.innerText = "0%";
     }
+    // Max Return (ẩn trước đó giờ hiển thị)
+let maxReturn = invest + maxProfit;
 
-    // Max Return (ẩn)
-    let maxReturn = invest + maxProfit;
+// Final % Return từ Total
+if (total > 0) {
+    let finalPercent = ((maxReturn - total) * 100) / total;
 
-    // Final % Return từ Total
-    if (total > 0) {
-        let finalPercent = ((maxReturn - total) * 100) / total;
-        finalReturnOutput.innerText = finalPercent.toFixed(2) + "% return";
-    } else {
-        finalReturnOutput.innerText = "0% return";
-    }
+    finalReturnOutput.innerText =
+        "$" + maxReturn.toFixed(2) +
+        " (" + finalPercent.toFixed(2) + "% return)";
+} else {
+    finalReturnOutput.innerText = "$0 (0% return)";
+}
 }
 
 totalInput.addEventListener("input", calculate);
