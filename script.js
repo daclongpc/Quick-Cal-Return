@@ -6,6 +6,7 @@ const insuranceOutput = document.getElementById("insurance");
 const breakEvenOutput = document.getElementById("breakEven");
 const finalReturnOutput = document.getElementById("finalReturn");
 const profitPercentOutput = document.getElementById("profitPercent");
+const insurancePercentOutput = document.getElementById("insurancePercent");
 
 function calculate() {
     let total = parseFloat(totalInput.value) || 0;
@@ -15,6 +16,13 @@ function calculate() {
     // Insurance
     let insurance = total - invest;
     insuranceOutput.innerText = insurance.toFixed(2);
+    // Insurance %
+if (total > 0) {
+    let insurancePercent = (insurance * 100) / total;
+    insurancePercentOutput.innerText = insurancePercent.toFixed(2) + "%";
+} else {
+    insurancePercentOutput.innerText = "0%";
+}
 
     // Profit % trên invest
     if (invest > 0) {
